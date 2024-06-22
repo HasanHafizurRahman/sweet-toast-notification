@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+
+# Distribution directory
+dist/
+
+# IDE or editor specific files
+.vscode/
+.idea/
+
+# Build files
+*.log
+*.json
+*.lock
+*.zip
+
+# Environment variables
+.env
+.env.local
+
+# Miscellaneous
+.DS_Store
