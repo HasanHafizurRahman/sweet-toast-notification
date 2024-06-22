@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SweetAlert = ({ message, onClose }) => {
+const SweetAlert = ({ title, text, icon, onClose }) => {
   const styles = {
     alert: {
       position: 'fixed',
@@ -12,15 +12,38 @@ const SweetAlert = ({ message, onClose }) => {
       border: '1px solid #000',
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
       zIndex: 1000,
+      textAlign: 'center',
     },
     button: {
       marginTop: '10px',
     },
+    icon: {
+      fontSize: '24px',
+      marginBottom: '10px',
+    },
+    title: {
+      fontSize: '18px',
+      fontWeight: 'bold',
+      marginBottom: '10px',
+    },
+    text: {
+      fontSize: '14px',
+      marginBottom: '10px',
+    },
+  };
+
+  const iconMap = {
+    success: '✔️',
+    error: '❌',
+    warning: '⚠️',
+    info: 'ℹ️',
   };
 
   return (
     <div style={styles.alert}>
-      {message}
+      <div style={styles.icon}>{iconMap[icon]}</div>
+      <div style={styles.title}>{title}</div>
+      <div style={styles.text}>{text}</div>
       <button style={styles.button} onClick={onClose}>Close</button>
     </div>
   );
