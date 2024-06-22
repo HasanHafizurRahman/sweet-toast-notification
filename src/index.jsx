@@ -1,22 +1,14 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import SweetAlert from './SweetAlert';
-
-// const showSweetAlert = (message) => {
-//   const container = document.createElement('div');
-//   document.body.appendChild(container);
-
-//   const handleClose = () => {
-//     ReactDOM.unmountComponentAtNode(container);
-//     document.body.removeChild(container);
-//   };
-
-//   ReactDOM.render(<SweetAlert message={message} onClose={handleClose} />, container);
-// };
-
-// export default showSweetAlert;
-
+import { createRoot } from 'react-dom';
 import SweetAlert from './SweetAlert';
 
-export default SweetAlert;
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <SweetAlert
+      title="Hello!"
+      text="This is a sweet alert"
+      icon="success"
+      onClose={() => {}}
+    />
+  </React.StrictMode>
+);
 
